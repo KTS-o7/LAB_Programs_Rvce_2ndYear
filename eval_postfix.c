@@ -64,7 +64,7 @@ I the read symbol is an operation  then two digits are popped from the stack and
 float eval_postfix(STACK *s, char postfix[20])
 {
     int i;
-    float operandOne, operandTwo, result;
+    float operandOne, operandTwo, result, temp;
     char symbol;
 
     for (i = 0; postfix[i] != '\0'; i++)
@@ -72,6 +72,13 @@ float eval_postfix(STACK *s, char postfix[20])
         symbol = postfix[i];
         if (isdigit(symbol))
             push(s, symbol - '0');
+        else if(isalpha(symbol))
+        {
+            printf("\nEnter the value of %c",symbol);
+            scanf("%f",&temp);
+            printf("\n");
+            push(s,temp);
+        }
         else
         {
             operandTwo = pop(s);
