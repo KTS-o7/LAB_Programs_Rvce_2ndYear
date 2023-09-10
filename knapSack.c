@@ -13,7 +13,7 @@ void display()
     int i, j;
     i = n;
     j = W;
-    while (i != 0 || j != 0)
+    while (i > 0 || j > 0)
     {
         if (V[i][j] != V[i - 1][j])
         {
